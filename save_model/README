@@ -1,6 +1,6 @@
-The model files were splitted
-They must be concacatenated as follows :
-
+THE PYTORCH SAVED MODEL FILE HAD TO BE SPLIT INTO 10MB PARTS DUE TO GITHUB FILE SIZE LIMIT 
+THESE PARTS MUST BE CONCATENATED BACK TO BE ABLE TO RESTORE THE MODEL FILE. TO DO SO, YOU CAN USE THE PYTHON CODE BELOW
+PROVIDED YOU HAVE DEFINED THE MODEL BEFORE.
 
 save_dir="/content/save_model"
 save_file = "final_model"
@@ -32,5 +32,4 @@ def concatenate_files(part_files_pattern, output_file):
 
 # Usage
 concatenate_files(save_path, restore_path)
-
 model.load_state_dict(torch.load(restore_path))
